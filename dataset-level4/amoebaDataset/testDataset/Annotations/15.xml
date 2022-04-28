@@ -1,0 +1,27 @@
+<annotation>
+	<folder>images</folder>
+	<filename>43.jpg</filename>
+	<path>F:\Jupyter\Projects_AmoebaDetection\amoebaDataset\images\43.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>768</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>amoeba</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>64</xmin>
+			<ymin>383</ymin>
+			<xmax>219</xmax>
+			<ymax>553</ymax>
+		</bndbox>
+	</object>
+
+</annotation>
