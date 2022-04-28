@@ -17,16 +17,16 @@ The "level3_objectDetectionWithMaskRCNN" presents one network that can run objec
 ## Object detection using Jetson Nano
 The "level4_objectDetectionWithJetsonNano" mainly introduce students to run object detection with Jetson Nano. Linux command line is the basic technique that students need to know. Then students are encouraged to follow the tutorial in the supporting information (SI) and source code of Jetson Nano (https://github.com/dusty-nv/jetson-inference) to install necessary packages and run object detection. 
 
-  
+<br/>
 
 Other useful information:
 
-* Datasets 
+* Datasets: 
   Images were collected with a microscope camera (QImaging Go-3, Teledyne Photometrics, USA) . The images need to convert from .TIF format to .jpg format. And the python code that can perform this job is provided in "tools" folder. For object detection, the images are labeled and converted into the Pascal Visual Object Challenge (VOC) data type.  The amoebae in the images were labeled with the open source tool LabelImg in GitHub (Tzutalin, LabelImg, Git code (2015), https://github.com/tzutalin/labelImg). 
 
-* Implementation 
+* Implementation: 
   For Mask R-CNN, the requirements are Python 3, Tensorflow(1.15.0) and Keras(2.1.6). All the training and inference were performed on Google Colab, using their GPU. MobileNetV2-SSD-Lite was implemented in a NVIDIA Jetson Nano device. Installed on the device was NVIDIA JetPack SDK (version JetPack 4.4), which includes the latest Linux Driver Package (L4T) with Linux operating system, CUDA-X accelerated libraries, and APIs for deep learning. The GitHub tool Jetson Inference (https://github.com/dusty-nv/jetson-inference) provided tools for the training of the MobileNetV2-SSD-Lite model. 
 
-* Arduino 
+* Arduino: 
   Arduino Uno stepper motor is used to control the movement of table to image the whole drops. The code is contained in the folder `arduino/uno_steppermotor`. 
 
