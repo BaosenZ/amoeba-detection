@@ -12,6 +12,6 @@ for i in fileList:
 	img = jetson.utils.cudaFromNumpy(img)
 	detections=net.Detect(img)
 	img = np.ascontiguousarray(img)
-	ImgName = str(i) + ".jpg"
+	ImgName = str(i)
 	cv2.imwrite(ImgName,img)
 

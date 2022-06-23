@@ -8,16 +8,22 @@ This document is the detailed tutorials for Level 3 that is about training our o
 
 <p align="center">
   <img src="ImagesInJetsonNanoTutorial/SSD-Mobilenet.png" alt="banner" width="800" />
-    Figure 1. SSD-Mobilenet architecture
+    <p align="center">
+        Figure 1. SSD-Mobilenet architecture
+</p>
 </p>
 
 
-At first, students need to learn [Linux command line basics](#The Linux command line basics) and know how to run the command line in Jetson Nano device. Then, students follow the tutorials in '[Example: Amoeba Detection](#Example: Amoeba Detection)' to load the dataset, train and evaluate the model, run inference for test dataset and the drop. For the [Bonus part](#Bonus: Amoebae A. Proteus and N. Fowleri Detection), students follow the same procedure to differentiate two types of amoeba with the command line with the dataset of A. Proteus and N. Fowleri that we provided. 
+
+At first, students need to learn Linux command line basics (check 'The Linux command line basics' section) and know how to run the command line in Jetson Nano device. Then, students follow the tutorials in 'Example: Amoeba Detection' to load the dataset, train and evaluate the model, run inference for test dataset and the drop. For the Bonus part (check 'Bonus: Amoebae A. Proteus and N. Fowleri Detection' section), students follow the same procedure to differentiate two types of amoeba with the command line with the dataset of A. Proteus and N. Fowleri that we provided. 
 
 <p align="center">
   <img src="ImagesInJetsonNanoTutorial/level3.png" alt="banner" width="800" />
-    Figure 2. Object detection using Jetson Nano
+    <p align="center">
+        Figure 2. Object detection using Jetson Nano
 </p>
+</p>
+
 
 > Note that if students get a new Jetson Nano device, they will take time to boot Jetson Nano device and install Jetson Inference project on it. For booting Jetson Nano device, the [tutorials](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#prepare) are provided in the Nvidia website. The Jetson inference project includes some deep learning networks for image classification, object detection, and semantic segmentation. Various pre-trained deep learning models are automatically downloaded to get you up and running quickly. We can also train new models with the pre-trained networks to get our own custom model. The details of installation process can be referred to the [source](https://github.com/dusty-nv/jetson-inference/blob/master/docs/building-repo-2.md ) and the [video](https://www.youtube.com/watch?v=5rbOsKCZ-VU&list=PLGs0VKk2DiYxP-ElZ7-QXIERFFPkOuP4_&index=49&ab_channel=PaulMcWhorter ). Make sure the jetson-inference project download in `desktop`. 
 
@@ -50,14 +56,17 @@ Table 1. Common used Linux command line:
 | $ rm file1         | Delete file1                            |
 | $ ctrl-c           | Stop current command                    |
 | $ clear            | Clear all command line                  |
-| Tab                | ??Fill out the command line automatically |
+| Tab                | Fill out the command line automatically |
 
  
 
 <p align="center">
   <img src="ImagesInJetsonNanoTutorial/Command line.png" alt="banner" width="800" />
-    Figure 3. Linux command line terminal
+    <p align="center">
+        Figure 3. Linux command line terminal
 </p>
+</p>
+
 
 
 
@@ -65,7 +74,7 @@ Table 1. Common used Linux command line:
 
 After installation of the Jetson Inference project, students can start amoeba detection example. We will follow nearly same workflow with Level 1 and level 2: load images dataset, train the model, evaluate the model, inference. 
 
-<b> load images dataset </b>
+<b> Load images dataset </b>
 The code for SSD is under the directory `jetson-inference/python/training/detection/ssd`, if you build your `jetson-inference` project under the `desktop`.  When we load images dataset, change the directory to correct the folder by typing the command line below at first, then download the `amoeba-detection` project from [our Github](https://github.com/BaosenZ/amoeba-detection.git): 
 
 
@@ -76,7 +85,8 @@ $ git clone https://github.com/BaosenZ/amoeba-detection.git
 
 Note that we need to make sure the internet is connected by connecting the internet port, since the project is downloaded from the internet. 
 
-<p></p>
+<p>
+</p>
 
 <b>Train the model </b>
 
@@ -88,7 +98,7 @@ $ python3 train_ssd.py --data=amoeba-detection/dataset-level3/amoebaDataset/trai
 
 >Note that if you run out of memory or your process is "killed" during training, close the extra windows/process and try [Mounting SWAP](https://github.com/dusty-nv/jetson-inference/blob/master/docs/pytorch-transfer-learning.md#mounting-swap) to save memory. 
 
-The argument `--data` is the dataset directory, we need to locate the amoeba dataset in my Github project. The argument `--model-dir` is the directory to output the trained model checkpoints. The argument `--dataset-type` is to specify the dataset type. We set the dataset type is `voc`. When we label the image, we also label them as `voc` type. The argument `--net` is network architecture, it can be `mb1-ssd`, `mb1-lite-ssd`, `mb2-ssd-lite`. The argument `--pretrained-ssd` is pretrained model, the default is `models/mobilenet-v1-ssd-mp-0_675.pth`.  The argument `--epochs` is to set the number of epoch. To save the education and training time, we can set the epoch number 20. Based on my test, when the epoch number is 60, the mAP can achieve 0.87 for test dataset. Students can know more arguments description by typing `python3 train_ssd.py help` or by looking at the [source code](https://github.com/dusty-nv/pytorch-ssd/blob/3f9ba554e33260c8c493a927d7c4fdaa3f388e72/train_ssd.py). 
+The argument `--data` is the dataset directory, we need to locate the amoeba dataset in my Github project. The argument `--model-dir` is the directory to output the trained model checkpoints. The argument `--dataset-type` is to specify the dataset type. We set the dataset type is `voc`. When we label the image, we also label them as `voc` type. The argument `--net` is network architecture, it can be `mb1-ssd`, `mb1-lite-ssd`, `mb2-ssd-lite`. The argument `--pretrained-ssd` is pretrained model, the default is `models/mobilenet-v1-ssd-mp-0_675.pth`.  The argument `--epochs` is to set the number of epoch. To save the education and training time, we can set the epoch number 20. Based on my test, when the epoch number is 60, the mAP can achieve 0.87 for test dataset. Students can know more arguments description by typing `python3 train_ssd.py -h` for help or by looking at the [source code](https://github.com/dusty-nv/pytorch-ssd/blob/3f9ba554e33260c8c493a927d7c4fdaa3f388e72/train_ssd.py). 
 
 
 After that, we need to convert the model to ONNX (Open Neural Network Exchange), so that we can load it with TensorRT (TensorRT is a machine learning framework that is published by Nvidia to run inference): 
@@ -96,38 +106,40 @@ After that, we need to convert the model to ONNX (Open Neural Network Exchange),
 $ python3 onnx_export.py --model-dir=models/amoebaModel_mb2 --net=mb2-ssd-lite
 ```
 
-<p></p>
+<p>
+</p>
 
 <b>Evaluate the model </b>
 
 The model can be evaluated by modifying the command line below. 
 
 ```
-$ python3 eval_ssd.py --net=mb2-ssd-lite --eval_dir=evals_amoebaEval --label_file=models/amoebaModel_mb2/labels.txt --dataset=amoeba-detection/dataset-level3/amoebaDataset/testDataset  --trained_model=models/amoebaModel_mb2/<.pth>
+$ python3 eval_ssd.py --net=mb2-ssd-lite --eval_dir=evals/evals_amoebaEval --label_file=models/amoebaModel_mb2/labels.txt --dataset=amoeba-detection/dataset-level3/amoebaDataset/testDataset  --trained_model=models/amoebaModel_mb2/<mb2-ssd-lite-.pth>
 ```
 
-The `--trained-model` path need to be replaced by the best trained model file with lowest loss. From the figure 2 (screen shot after converting the best trained model to ONNX), we find out the best trained model is from epoch 30. So, in our situation, the `--trained_model=models/amoebaModel_mb2/<.pth>` need to be replaced by `--trained_model=models/amoebaModel_mb2/`. 
+The `--trained-model` path need to be replaced by the best trained model file with lowest loss. From the figure 2 (screen shot after converting the best trained model to ONNX), we find out the best trained model is from epoch 30. So, in our situation, the `--trained_model=models/amoebaModel_mb2/<mb2-ssd-lite-.pth>` need to be replaced by `--trained_model=models/amoebaModel_mb2/mb2-ssd-lite-Epoch-13-Loss-2.309152126312256.pth`. 
 
-<p></p>
+<p>
+</p>
 
 <b>Inference</b>
 
 After getting the trained model, we can run inference for test dataset and drop images. The inference images are in the directory of`jetson-inference/python/training/detection/ssd/amoeba-detection/level3-objectDetectionUsingJetsonNano/inference`. If we want to run the inference for test dataset, go to `testDataset-inference` directory by running the command line below. 
 
 ```
-$ cd amoeba-detection/level3-objectDetectionUsingJetsonNano/inference/testDataset-inference
+$ cd amoeba-detection/level3_objectDetectionUsingJetsonNano/inference/testDataset-inference
 ```
 
 If we want to run the inference for drop1, go to the `drop1-inference` directory by running the command line below. 
 
 ```
-$ cd amoeba-detection/level3-objectDetectionUsingJetsonNano/inference/drop1-inference
+$ cd amoeba-detection/level3_objectDetectionUsingJetsonNano/inference/drop1-inference
 ```
 Then, run the command line below in specific folder. We will get the predicted images. 
 ```
 $ python3 predImages.py
 ```
-The inference results that we tried are shown in the `amoeba-detection/results` folder or the Figure S6-10 in supporting information.
+The inference results will generate in the folder `amoeba-detection/level3-objectDetectionUsingJetsonNano/inference/testDataset-inference` for test dataset. The inference results that we tried are shown in the `amoeba-detection/results` folder or the Figure S6-10 in supporting information.
 <p>
 </P>
 ## Bonus: Amoebae A. Proteus and N. Fowleri Detection
@@ -145,14 +157,15 @@ $ python3 train_ssd.py --data=amoeba-detection/dataset-level3/amoebaProFowDatase
 $ python3 onnx_export.py --model-dir=models/amoebaProFowModel_mb2 --net=mb2-ssd-lite
 
 # Evaluate the model (remember to replace the trained_model path)
-$ python3 eval_ssd.py --net=mb2-ssd-lite --eval_dir=evals_amoebaProFowEval --label_file=models/amoebaProFowModel_mb2/labels.txt --dataset=amoeba-detection/dataset-level3/amoebaProFowDataset/testDataset --trained_model=models/amoebaProFowModel_mb2/<.pth>
+$ python3 eval_ssd.py --net=mb2-ssd-lite --eval_dir=evals/evals_amoebaProFowEval --label_file=models/amoebaProFowModel_mb2/labels.txt --dataset=amoeba-detection/dataset-level3/amoebaProFowDataset/testDataset --trained_model=models/amoebaProFowModel_mb2/<mb2-ssd-lite-.pth>
 
 # Inference of test dataset
-$ cd amoeba-detection/level3-objectDetectionUsingJetsonNano/inferenceProFow
+$ cd amoeba-detection/level3_objectDetectionUsingJetsonNano/inferenceProFow
 $ python3 predImages.py
 ```
 
-
+<p>
+</P>
 
 
 ## More learning resources
