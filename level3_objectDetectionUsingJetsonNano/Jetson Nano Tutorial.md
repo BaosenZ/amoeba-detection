@@ -119,6 +119,13 @@ $ python3 eval_ssd.py --net=mb2-ssd-lite --eval_dir=evals/evals_amoebaEval --lab
 
 The `--trained-model` path need to be replaced by the best trained model file with lowest loss. From the figure 2 (screen shot after converting the best trained model to ONNX), we find out the best trained model is from epoch 30. So, in our situation, the `--trained_model=models/amoebaModel_mb2/<mb2-ssd-lite-.pth>` need to be replaced by `--trained_model=models/amoebaModel_mb2/mb2-ssd-lite-Epoch-13-Loss-2.309152126312256.pth`. 
 
+<p align="center">
+  <img src="ImagesInJetsonNanoTutorial/eval-model.png" alt="banner" width="800" />
+    <p align="center">
+        Figure 4. Screen shot of model evaluation
+</p>
+</p>
+
 <p>
 </p>
 
