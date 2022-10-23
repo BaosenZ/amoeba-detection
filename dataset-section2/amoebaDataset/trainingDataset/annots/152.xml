@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>152.jpg</filename>
+	<path>C:\Users\Administrator\Desktop\amoebaDetection\trainingDataset\images\152.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>768</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>amoeba</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>621</xmin>
+			<ymin>330</ymin>
+			<xmax>765</xmax>
+			<ymax>533</ymax>
+		</bndbox>
+	</object>
+</annotation>

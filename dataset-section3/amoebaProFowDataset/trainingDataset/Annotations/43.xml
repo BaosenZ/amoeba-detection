@@ -1,0 +1,38 @@
+<annotation>
+	<folder>images</folder>
+	<filename>43.jpg</filename>
+	<path>C:\Users\Administrator\Desktop\ProFowCombined\images\43.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>1536</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Proteus Amoeba</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>402</xmin>
+			<ymin>297</ymin>
+			<xmax>540</xmax>
+			<ymax>392</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>N.Fowleri Amoeba</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>243</xmin>
+			<ymin>918</ymin>
+			<xmax>387</xmax>
+			<ymax>1059</ymax>
+		</bndbox>
+	</object>
+</annotation>
