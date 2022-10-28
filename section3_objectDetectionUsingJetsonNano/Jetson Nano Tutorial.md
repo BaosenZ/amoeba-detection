@@ -149,6 +149,7 @@ $ python3 predImages.py
 The inference results will generate in the folder `amoeba-detection/section3-objectDetectionUsingJetsonNano/inference/testDataset-inference` for test dataset. The inference results that we tried are shown in the `amoeba-detection/results` folder or the Figure S6-10 in supporting information.
 <p>
 </P>
+
 ## Bonus: Amoebae A. Proteus and N. Fowleri Detection
 
 Based on the command line and python code in Box 2, 3 in the Example, students can train, evaluate and do inference for the A. proteus and N.fowleri amoeba dataset.
