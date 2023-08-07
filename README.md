@@ -37,4 +37,4 @@ Arduino Uno stepper motor is used to control the movement of table to image the 
 
 ## Workshop videos
 Welcome to watch our workshop videos: 
-<p><a href="https://www.youtube.com/playlist?list=PL5po4e4yJQICA82j2ja6_2gjBaEzQ4kue"><img src=https://github.com/BaosenZ/amoeba-detection/tree/master/tools/workshop_video_thumbnail.png width="750"></a></p>
+<p><a href="https://www.youtube.com/playlist?list=PL5po4e4yJQICA82j2ja6_2gjBaEzQ4kue"><img src=https://github.com/BaosenZ/amoeba-detection/blob/master/tools/workshop_video_thumbnail.png width="750"></a></p>
